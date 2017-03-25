@@ -2,6 +2,10 @@
 
 #clear
 
+#Title :Pera wifi Troubleshoot fixer !
+#Author: Namila Bandara
+#github link: https://github.com/namila007/Pera_WiFi_Fixer
+
 if [ "$(whoami)" != "root" ]; then
 	echo -en "\033[1B"
 	echo -e "  \e[38;5;160m$USER!!\e[38;5;100m Please run in sudo mode"
@@ -10,14 +14,14 @@ if [ "$(whoami)" != "root" ]; then
 fi 
 
 set_dl(){
-echo "deb http://london.mirrors.linode.com/ubuntu/ vivid main" | sudo tee /etc/apt/sources.list.d/vivid.list
-echo -e "Package: *\nPin: release o=Ubuntu,n=vivid\nPin-Priority: -1" | sudo tee cat /etc/apt/preferences.d/vivid
+	echo "deb http://london.mirrors.linode.com/ubuntu/ vivid main" | sudo tee /etc/apt/sources.list.d/vivid.list
+	echo -e "Package: *\nPin: release o=Ubuntu,n=vivid\nPin-Priority: -1" | sudo tee cat /etc/apt/preferences.d/vivid
 }
 
 update(){
-sudo apt-get update
-sudo apt-get install wpasupplicant=2.1-0ubuntu7
-sudo apt-mark hold 
+	sudo apt-get update
+	sudo apt-get install wpasupplicant=2.1-0ubuntu7
+	sudo apt-mark hold 
 }
 
 error_update(){
