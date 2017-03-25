@@ -2,9 +2,11 @@
 Script to fix the pera Wifi problem clearing system certifiactes or installing wpa supplicant
 
 ## How to use;
-1.Run `chmod u+x wifi_fixer.sh` 
+1.Click clone or download , download the files as zip and extract
 
-2.Run `sudo ./wifi_fixer.sh -h` for help
+2.Open bash and run `chmod u+x wifi_fixer.sh` 
+
+3.Run `sudo ./wifi_fixer.sh -h` for help
 
 ### `sudo ./wifi_fixer.sh <command>`
 
