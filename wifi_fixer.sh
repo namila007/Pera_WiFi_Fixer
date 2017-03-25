@@ -51,16 +51,30 @@ elif [[ $1 = "-wpa" ]] ; then
 		error_update
 		
 		if [ $(dpkg-query -W -f='${Status}' wpasupplicant 2>/dev/null | grep -c "ok installed") = 1 ] ; then
-			echo -e "\e[38;5;42mJOB DONE!!!"
+			echo -e "\e[38;5;42mJOB DONE!!!\e[0;0m"
 			exit 1
 		else
-			echo -e "\e[38;5;160mInstallation failed.Please run again"	
+			echo -e "\e[38;5;160mInstallation failed.Please run again\e[0;0m"	
 			exit 1
 
 		fi	
 	fi
 elif [[ $1 = "-cl" ]] ; then
-	echo "HIII"
+
+
+	
+	
+	if [ ! -f /etc/NetworkManager/system-connections/Pera\ WiFi ]; then
+    echo -e "\e[38;5;160mFile not found!\e[0;0m"
+    exit 1
+	fi
+	$filename="/etc/NetworkManager/system-connections/Pera\ WiFi"
+	sed -i.bak 's/system-ca-certs=true/system-ca-certs=false/' $filename 
+	if ! diff $filename $filename.bak &> /dev/null; then
+		echo -e "\e[38;5;160mFile Edited and Backup is created $filename.bak \e[0;0m"
+	else
+		echo -e "\e[38;5;160m  no '$changefrom' found \e[0;0m"
+	fi	
 	exit 1
 
 elif [[ $1 = "" ]] ; then
