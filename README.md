@@ -15,3 +15,6 @@ Visit [Pera wifi troubleshoot site](https://faq.ce.pdn.ac.lk/index.php?sid=3027&
 ### Report bugs and errors 
 
 Enjoy ;-)
+
+
+PS: Wifi Proxy Setter [Go to Github repo](https://github.com/namila007/Simple-Terminal-Proxy-Sette) 
